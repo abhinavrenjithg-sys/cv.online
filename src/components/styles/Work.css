@@ -1,0 +1,559 @@
+/* ── Work Section ── */
+.work-section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--backgroundColor);
+  padding: 80px 0;
+}
+
+/* ── Header + Tabs ── */
+.work-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.work-section h2 {
+  font-size: 70px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.work-section h2 > span {
+  color: var(--accentColor);
+}
+
+.work-tabs {
+  display: flex;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.work-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+.work-tab:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.work-tab-active {
+  background: rgba(94, 234, 212, 0.12) !important;
+  color: var(--accentColor) !important;
+  border: 1px solid rgba(94, 234, 212, 0.3);
+}
+
+.work-container {
+  margin: auto;
+}
+
+/* ── Tool Tags ── */
+.tools-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tool-tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  background: rgba(94, 234, 212, 0.06);
+  color: rgba(94, 234, 212, 0.85);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ── Live Demo Button ── */
+.live-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  padding: 11px 24px;
+  background: linear-gradient(135deg, rgba(94, 234, 212, 0.15), rgba(94, 234, 212, 0.05));
+  border: 1px solid var(--accentColor);
+  border-radius: 8px;
+  color: var(--accentColor);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.live-demo-btn:hover {
+  background: rgba(94, 234, 212, 0.25);
+  box-shadow: 0 0 20px rgba(94, 234, 212, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ── Carousel ── */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 50px 0;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.carousel-info {
+  flex: 1;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.carousel-number h3 {
+  font-size: 60px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  opacity: 0.2;
+}
+
+.carousel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.carousel-details h4 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.carousel-category {
+  font-weight: 200;
+  color: #adacac;
+  margin: 0;
+  font-size: 15px;
+}
+
+.carousel-tools {
+  margin-top: 16px;
+}
+
+.carousel-tools .tools-label {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ── Image Buttons (Carousel) ── */
+.carousel-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-img-btn,
+.multi-img-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  display: block;
+}
+
+.single-img-btn img,
+.multi-img-btn img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.single-img-btn:hover img,
+.multi-img-btn:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.75);
+}
+
+.img-zoom-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.single-img-btn:hover .img-zoom-hint,
+.multi-img-btn:hover .img-zoom-hint {
+  opacity: 1;
+}
+
+.multi-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.multi-img-main {
+  grid-column: 1 / -1;
+}
+
+.multi-img-main img {
+  max-height: 260px;
+}
+
+.multi-img-btn:not(.multi-img-main) img {
+  max-height: 150px;
+}
+
+/* ── Navigation Arrows ── */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #eae5ec;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.carousel-arrow:hover {
+  background: rgba(94, 234, 212, 0.15);
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+  box-shadow: 0 0 20px rgba(94, 234, 212, 0.15);
+}
+
+.carousel-arrow-left { left: -70px; }
+.carousel-arrow-right { right: -70px; }
+
+/* ── Dot Indicators ── */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  border-color: var(--accentColor);
+  background: rgba(94, 234, 212, 0.2);
+}
+
+.carousel-dot-active {
+  background: var(--accentColor);
+  border-color: var(--accentColor);
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
+}
+
+/* ── All Projects Grid ── */
+.all-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(94, 234, 212, 0.25);
+  background: rgba(94, 234, 212, 0.03);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-card-img-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.project-card-img-btn img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-card:hover .project-card-img-btn img {
+  transform: scale(1.05);
+  filter: brightness(0.75);
+}
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.project-card:hover .project-card-overlay {
+  opacity: 1;
+}
+
+.project-card-info {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-card-num {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accentColor);
+  opacity: 0.7;
+}
+
+.project-card-header h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+}
+
+.project-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(94, 234, 212, 0.1);
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  color: var(--accentColor);
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.project-card-link:hover {
+  background: rgba(94, 234, 212, 0.25);
+  box-shadow: 0 0 12px rgba(94, 234, 212, 0.2);
+}
+
+.project-card-category {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  font-weight: 300;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* ── Image Modal ── */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  cursor: zoom-out;
+  padding: 40px;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(94, 234, 212, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -44px;
+  right: -10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-close:hover {
+  background: rgba(255, 80, 80, 0.25);
+  border-color: rgba(255, 80, 80, 0.5);
+  color: #ff6b6b;
+}
+
+/* ── Responsive ── */
+@media only screen and (max-width: 1400px) {
+  .work-section h2 { font-size: 50px; }
+  .carousel-details h4 { font-size: 24px; }
+  .carousel-number h3 { font-size: 45px; }
+  .carousel-content { gap: 40px; }
+  .carousel-arrow-left { left: 10px; }
+  .carousel-arrow-right { right: 10px; }
+  .all-projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media only screen and (max-width: 1025px) {
+  .carousel-content { flex-direction: column; gap: 30px; }
+  .carousel-info { width: 100%; }
+  .carousel-image-wrapper { width: 100%; }
+  .carousel-arrow { width: 40px; height: 40px; font-size: 18px; }
+  .carousel-arrow-left { left: 10px; }
+  .carousel-arrow-right { right: 10px; }
+}
+
+@media only screen and (max-width: 900px) {
+  .work-section { padding: 50px 0; }
+  .work-section h2 { font-size: 40px; }
+  .carrier-number h3 { font-size: 35px; }
+  .carousel-details h4 { font-size: 20px; }
+  .carousel-content { gap: 20px; }
+  .carousel-slide { padding: 30px 0; }
+  .work-header { flex-direction: column; align-items: flex-start; }
+  .all-projects-grid { grid-template-columns: 1fr; }
+}
+
+@media only screen and (max-width: 600px) {
+  .image-modal-overlay { padding: 20px; }
+  .image-modal-close { top: -50px; right: 0; }
+  .all-projects-grid { grid-template-columns: 1fr; }
+}
